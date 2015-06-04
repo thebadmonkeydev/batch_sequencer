@@ -2,7 +2,17 @@ require 'batch_sequencer/sequence_definition_error'
 
 module BatchSequencer
   class SequenceDefinitionValidator
-    def self.validate(sequence_def)
+    attr_accessor :sequence_def
+
+    def self.[](sequence_def)
+      self.new(sequence_def)
+    end
+
+    def initialize(sequence_def)
+      self.sequence_def  = sequence_def
+    end
+
+    def validate
       raise SequenceDefinitionError['sequence definition is not a hash'] unless sequence_def.is_a? Hash
       sequence_def.symbolize_keys
 
