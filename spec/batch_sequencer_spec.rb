@@ -21,7 +21,7 @@ module BatchSequencer
 
       describe '#run' do
         it 'ensures validation of sequence definition' do
-          expect_any_instance_of(SequenceDefinitionValidator).to receive :validate
+          expect_any_instance_of(SequenceDefinitionValidator).to receive :validate!
           BatchSequencer.run(good_def)
         end
 

@@ -7,7 +7,7 @@ require 'batch_sequencer/sequence_definition_validator'
 
 module BatchSequencer
   def self.run(sequence_def, *args)
-    SequenceDefinitionValidator[sequence_def].validate
+    SequenceDefinitionValidator[sequence_def].validate!
   end
 end
 
