@@ -20,20 +20,12 @@ describe BatchSequencer do
 
     describe '#run' do
       it 'ensures validation of sequence definition' do
-        expect(BatchSequencer).to receive :validate_sequence_def
+        expect(BatchSequencer::SequenceDefinitionValidator).to receive(:validate).with good_def
         BatchSequencer.run(good_def)
       end
 
       it 'can accept any number of parameters after the sequence definition' do
         expect{BatchSequencer.run(good_def, 1)}.to_not raise_error
-      end
-    end
-  end
-
-  context 'internal methods' do
-    context '#validate_sequence_def' do
-      it 'throws an error when the definition it not a hash' do
-        expect{BatchSequencer.validate_sequence_def([])}.to raise_error 'sequence definition is not a hash'
       end
     end
   end
