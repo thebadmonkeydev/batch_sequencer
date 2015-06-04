@@ -1,4 +1,5 @@
 require "batch_sequencer/version"
+require "batch_sequencer/railtie" if defined?(Rails)
 
 module BatchSequencer
   def self.run(batch_def, *args)
