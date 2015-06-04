@@ -4,7 +4,8 @@
 Status](https://travis-ci.org/michaelkelly322/batch_sequencer.svg)](https://travis-ci.org/michaelkelly322/batch_sequencer)
 [![Code
 Climate](https://codeclimate.com/github/michaelkelly322/batch_sequencer/badges/gpa.svg)](https://codeclimate.com/github/michaelkelly322/batch_sequencer)
-
+[![Test
+Coverage](https://codeclimate.com/github/michaelkelly322/batch_sequencer/badges/coverage.svg)](https://codeclimate.com/github/michaelkelly322/batch_sequencer/coverage)
 
 ## Installation
 
