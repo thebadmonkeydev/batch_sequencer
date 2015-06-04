@@ -6,10 +6,6 @@ Status](https://travis-ci.org/michaelkelly322/batch_sequencer.svg)](https://trav
 Climate](https://codeclimate.com/github/michaelkelly322/batch_sequencer/badges/gpa.svg)](https://codeclimate.com/github/michaelkelly322/batch_sequencer)
 
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/batch_sequencer`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -28,7 +24,21 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To run a sequenced batch, batch_quencer provides a simple interface:
+
+```
+BatchSequencer.run(sequence_definition)
+```
+
+A sequence definition is a hash with three key pairs:
+
+```
+{
+  id: 1234, # The ActiveRecord ID associated with this sequence
+  class: ActiveRecordClass, # The class of the ActiveRecord object associated with this sequnce
+  jobs: [] # The structure of the job definitions is still unknown
+}
+```
 
 ## Development
 
