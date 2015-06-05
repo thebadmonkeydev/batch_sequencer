@@ -31,14 +31,53 @@ To run a sequenced batch, batch_quencer provides a simple interface:
 BatchSequencer.run(sequence_definition)
 ```
 
-A sequence definition is a hash with three key pairs:
+A sequence definition is composed of an array-defined workflow.  The
+convention here is that jobs within the root array element are executed
+sequentially, one level deeper is executed in parallel, one level deeper
+than that is again sequential.  The mode of operation switches with each
+level.  In the examples and diagrams below, I've labeled the opening
+parentheses with an `s` or a `p` to indicate whether that array is being
+executed sequentially or in parallel.
 
+```ruby
+[(s)
+  worker_1,
+  [(p)worker_2, worker_3],
+  worker_4
+]
 ```
-{
-  id: 1234, # The ActiveRecord ID associated with this sequence
-  class: ActiveRecordClass, # The class of the ActiveRecord object associated with this sequnce
-  jobs: [] # The structure of the job definitions is still unknown
-}
+
+For this workflow
+```
+         worker_2
+        /        \
+worker_1          worker_4
+        \        /
+         worker_3
+```
+
+Another Example
+```
+[(s)
+  worker_1,
+  [
+    [(p)worker_2, worker6],
+    [(p)worker_3, [(s)worker_4, worker_5]]
+  ],
+  worker_7
+]
+```
+
+For this workflow
+```
+                  worker_5
+                 /        \
+         worker_3          ----worker_7
+        /        \        /   /
+worker_1          worker_4   /
+        \                   /
+         worker_2---worker_6
+
 ```
 
 ## Development
