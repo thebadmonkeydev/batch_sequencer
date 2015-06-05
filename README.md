@@ -61,8 +61,8 @@ Another Example
 [(s)
   worker_1,
   [
-    [(p)worker_2, worker6],
-    [(p)worker_3, [(s)worker_4, worker_5]]
+    [(p)worker_2, worker_3],
+    [(p)worker_4, [(s)worker_5, worker_6]]
   ],
   worker_7
 ]
@@ -72,11 +72,11 @@ For this workflow
 ```
                   worker_5
                  /        \
-         worker_3          ----worker_7
+         worker_4          ----worker_7
         /        \        /   /
-worker_1          worker_4   /
+worker_1          worker_6   /
         \                   /
-         worker_2---worker_6
+         worker_2---worker_3
 
 ```
 
