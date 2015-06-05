@@ -60,9 +60,9 @@ Another Example
 ```
 [(s)
   worker_1,
-  [
-    [(p)worker_2, worker_3],
-    [(p)worker_4, [(s)worker_5, worker_6]]
+  [(p)
+    [(s)worker_2, worker_3],
+    [(s)worker_4, [(p)worker_5, worker_6]]
   ],
   worker_7
 ]
