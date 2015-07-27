@@ -1,4 +1,5 @@
-# BatchSequencer
+BatchSequencer is no longer being developed.  The project has been moved to [sidekiq-workflow](https://github.com/michaelkelly322/sidekiq-workflow)
+
 
 [![Build
 Status](https://travis-ci.org/michaelkelly322/batch_sequencer.svg)](https://travis-ci.org/michaelkelly322/batch_sequencer)
